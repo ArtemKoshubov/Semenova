@@ -1,0 +1,375 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Заголовок */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Логотип */
+.logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* Навигация */
+nav {
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #444;
+    padding: 12px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #d0d0d0;
+    color: #000;
+}
+
+/* Баннер */
+.banner {
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1; /* Убедитесь, что текст выше фона */
+}
+
+.banner-content h2 {
+    font-size: 3em; /* Уменьшите размер шрифта заголовка для больших экранов */
+    margin: 0; /* Убедитесь, что отступы по умолчанию убраны */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Добавьте тень для улучшения читаемости */
+    line-height: 1.2; /* Увеличьте межстрочный интервал для лучшей читаемости */
+}
+
+.banner-content p {
+    font-size: 1.5em; /* Размер текста для параграфа */
+    margin: 15px 0 25px; /* Увеличенные отступы */
+    line-height: 1.5; /* Межстрочный интервал для параграфа */
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .banner-content h2 {
+        font-size: 2.2em; /* Уменьшите размер шрифта на мобильных устройствах */
+    }
+
+    .banner-content p {
+        font-size: 1.2em; /* Уменьшите размер текста для параграфа на мобильных устройствах */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-content h2 {
+        font-size: 1.8em; /* Дополнительное уменьшение для очень маленьких экранов */
+    }
+
+    .banner-content p {
+        font-size: 1em; /* Дополнительное уменьшение для очень маленьких экранов */
+    }
+}
+
+/* Секции */
+.about, .services, .booking, .contact {
+    padding: 50px 0; /* Отступы сверху и снизу */
+    background-color: #f9f9f9; /* Светлый фон */
+}
+
+/* Контейнер */
+.container {
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+    padding: 0 20px; /* Отступы по бокам */
+}
+
+/* Контент секции "О нас" */
+.about-content {
+    display: flex; /* Используем Flexbox для размещения текста и изображения */
+    align-items: center; /* Выравнивание по вертикали */
+    justify-content: space-between; /* Распределение пространства между элементами */
+}
+
+/* Текстовая часть */
+.about-text {
+    flex: 1; /* Занимает 1 часть доступного пространства */
+    padding-right: 20px; /* Отступ справа для текста */
+}
+
+/* Изображение */
+.about-image {
+    flex: 1; /* Занимает 1 часть доступного пространства */
+}
+
+/* Стили для изображений */
+.image-container {
+    max-width: 100%; /* Ограничение ширины изображения */
+}
+
+.image {
+    width: 100%; /* Изображение занимает всю ширину контейнера */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+/* Отступ между секциями */
+.services {
+    margin-top: 30px; /* Отступ сверху для секции услуг */
+}
+
+/* Заголовки секций */
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Кнопки */
+.btn-book, .btn-contact {
+    display: inline-block;
+    background-color: #ff7f50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-book:hover, .btn-contact:hover {
+    background-color: #ff6347;
+    transform: translateY(-2px);
+}
+
+/* Стили для секции услуг */
+.services {
+    background-color: #f9f9f9; /* Светлый фон */
+    padding: 50px 0; /* Отступы сверху и снизу */
+}
+
+/* Сетка услуг */
+.service-grid {
+    display: grid; /* Используем Grid для сетки */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Автоматическая ширина колонок */
+    gap: 20px; /* Промежуток между карточками */
+    padding: 0 20px; /* Отступы по бокам */
+}
+
+/* Стили для карточек услуг */
+.service-item {
+    background-color: #fff; /* Белый фон для услуги */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    padding: 20px; /* Отступы внутри элемента */
+    transition: transform 0.3s; /* Плавный переход при наведении */
+    display: flex; /* Используем flexbox для вертикального выравнивания */
+    flex-direction: column; /* Вертикальная ориентация */
+    justify-content: space-between; /* Равномерное распределение пространства */
+    height: 100%; /* Занимает всю высоту родительского элемента */
+}
+
+/* Эффект при наведении на элемент услуги */
+.service-item:hover {
+    transform: translateY(-5px); /* Подъем элемента при наведении */
+}
+
+/* Стили для изображений услуг */
+.service-image {
+    width: 100%; /* Ширина изображения */
+    height: 200px; /* Фиксированная высота для одинакового размера */
+    object-fit: cover; /* Обрезка изображения для сохранения пропорций */
+    border-radius: 8px; /* Закругленные углы */
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+/* Заголовок услуги */
+.service-item h3 {
+    font-size: 1.5em; /* Размер шрифта заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+    color: #333; /* Цвет текста */
+}
+
+/* Описание услуги */
+.service-item p {
+    font-size: 1em; /* Размер шрифта описания */
+    color: #555; /* Цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+    flex-grow: 1; /* Занимает оставшееся пространство */
+}
+
+/* Кнопка "Забронировать" в карточках услуг */
+.btn-book {
+    background-color: #ff7f50; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    padding: 10px; /* Отступы внутри кнопки */
+    border-radius: 5px; /* Закругленные углы */
+    text-align: center; /* Центрирование текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-top: 15px; /* Отступ сверху */
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход цвета фона и эффекта при наведении */
+}
+
+/* Эффект при наведении на кнопку в карточках услуг */
+.btn-book:hover {
+    background-color: #ff6347; /* Цвет при наведении (томатный) */
+    transform: translateY(-2px); /* Легкий подъем при наведении */
+}
+
+/* Галерея */
+.gallery {
+    padding: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05); /* Увеличение изображения при наведении */
+}
+
+/* Модальное окно */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Формы */
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #c06341; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #a0522d; /* Цвет при наведении */
+}
+
+/* Кнопка "Наверх" */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #cdac9c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Скрыта по умолчанию */
+}
+
+.scroll-to-top:hover {
+    background-color: #908f8e;
+}
+
+/* Подвал */
+footer {
+    background-color: #333; /* Цвет фона */
+    color: white; /* Цвет текста */
+    text-align: center; /* Центрирование текста */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    width: 100%; /* Ширина 100% */
+    position: relative; /* Относительное позиционирование */
+    left: 0; /* Сдвиг влево */
+    right: 0; /* Сдвиг вправо */
+    bottom: 0; /* Сдвиг вниз */
+}
+
